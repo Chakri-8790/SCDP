@@ -1,0 +1,66 @@
+.about-pipeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-pipeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  padding: 16px 0;
+}
+
+.about-step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  flex-shrink: 0;
+}
+
+.about-step-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-step-body { flex: 1; padding-top: 6px; }
+
+.about-step-label {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.about-step-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.about-step-arrow {
+  position: absolute;
+  bottom: -4px;
+  left: 17px;
+  font-size: 18px;
+  color: var(--border-strong);
+  line-height: 1;
+}

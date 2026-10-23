@@ -1,0 +1,178 @@
+.prediction-demo-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.demo-pill {
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.demo-pill:hover {
+  opacity: 0.75;
+}
+
+.prediction-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.prediction-form-col {
+  min-width: 0;
+}
+
+.prediction-result-col {
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .prediction-layout {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+@media (max-width: 992px) {
+  .prediction-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-result-col .card,
+  .prediction-result-col > div {
+    position: static !important;
+  }
+}
+
+/* ============================================================
+   Prediction Insights Panel
+   ============================================================ */
+
+/* dial + probability */
+.pred-insights-card { border-left: 4px solid var(--primary-color); }
+
+.pred-insights-body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  padding: var(--space-4) var(--space-5);
+}
+
+.pred-dial-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  flex-shrink: 0;
+}
+
+.pred-dial-label { font-size: var(--text-xs); color: var(--text-muted); font-weight: 600; text-align: center; }
+
+.pred-prob-wrap { flex: 1; min-width: 160px; }
+
+.pred-prob-label {
+  font-size: var(--text-xs); color: var(--text-muted);
+  font-weight: var(--font-semibold); margin-bottom: var(--space-2);
+}
+
+.pred-prob-bar-track {
+  height: 28px;
+  display: flex;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.pred-prob-bar-no-delay {
+  background: var(--success-color);
+  display: flex; align-items: center; justify-content: center;
+  transition: width 0.8s ease;
+  min-width: 0;
+}
+
+.pred-prob-bar-delay {
+  background: var(--danger-color);
+  display: flex; align-items: center; justify-content: center;
+  transition: width 0.8s ease;
+  min-width: 0;
+}
+
+.pred-prob-bar-no-delay span,
+.pred-prob-bar-delay span {
+  font-size: 11px; font-weight: 700; color: white;
+  white-space: nowrap; overflow: hidden;
+}
+
+.pred-prob-legend {
+  display: flex; align-items: center;
+  font-size: var(--text-xs); color: var(--text-secondary);
+  margin-top: var(--space-2);
+}
+
+.pred-prob-dot {
+  display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; flex-shrink: 0;
+  margin-right: 5px;
+}
+
+.pred-prob-dot-green { background: var(--success-color); }
+.pred-prob-dot-red   { background: var(--danger-color); }
+
+/* interpretation card */
+.pred-interpretation-card { border-left: 4px solid; }
+
+.pred-interpretation-text {
+  font-size: var(--text-sm); color: var(--text-secondary);
+  line-height: 1.7; margin: 0 0 var(--space-4);
+}
+
+.pred-score-delta {
+  display: flex; align-items: center; gap: var(--space-3);
+  background: var(--surface-sunken); border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  flex-wrap: wrap;
+}
+
+.pred-score-delta-item { display: flex; flex-direction: column; align-items: center; }
+.pred-score-delta-label { font-size: var(--text-xs); color: var(--text-muted); }
+.pred-score-delta-val   { font-size: var(--text-2xl); font-weight: var(--font-bold); line-height: 1.1; }
+
+.pred-score-delta-diff {
+  font-size: var(--text-sm); font-weight: var(--font-bold);
+  padding: 3px 10px; border-radius: var(--radius-full);
+}
+.pred-score-delta-diff.up   { background: var(--danger-bg);   color: var(--danger-color); }
+.pred-score-delta-diff.down { background: var(--success-bg);  color: var(--success-color); }
+.pred-score-delta-diff.flat { background: var(--surface-sunken); color: var(--text-muted); }
+
+/* action checklist */
+.pred-actions-card { border-left: 4px solid; }
+
+.pred-action-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.pred-action-item {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  font-size: var(--text-sm); color: var(--text-primary);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.5;
+}
+
+.pred-action-item:last-child { border-bottom: none; }
+
+.pred-action-icon { flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 600px) {
+  .pred-insights-body { flex-direction: column; align-items: flex-start; }
+}

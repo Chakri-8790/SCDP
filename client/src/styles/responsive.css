@@ -1,0 +1,69 @@
+/* ============================================================
+   SmartConstruct AI — Responsive Utilities
+   ============================================================ */
+
+/* ── Breakpoints:
+   1440  desktop wide
+   1200  desktop
+    992  laptop
+    768  tablet
+    480  mobile
+   ─────────────────────────────────────────────────────────── */
+
+/* ── Grid responsive reflow ─────────────────────────────────── */
+@media (max-width: 1200px) {
+  .page-content { padding: var(--space-6); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 992px) {
+  .page-content { padding: var(--space-5); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .result-metrics { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .page-content { padding: var(--space-4); margin-left: 0 !important; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .result-metrics { grid-template-columns: 1fr; }
+
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .form-grid-3 { grid-template-columns: 1fr; }
+
+  .page-header { margin-bottom: var(--space-6); }
+  .page-header h1 { font-size: var(--text-3xl); }
+
+  .dashboard-body { grid-template-columns: 1fr; }
+
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+}
+
+@media (max-width: 480px) {
+  .page-content { padding: var(--space-3); }
+  .page-header h1 { font-size: var(--text-2xl); }
+  .stat-card-value { font-size: var(--text-3xl); }
+  .auth-card { margin: var(--space-4); }
+  .result-hero-value { font-size: 52px; }
+  .form-actions { flex-direction: column; }
+  .form-actions > * { width: 100%; }
+}
+
+/* Default: mobile-first hidden/shown helpers */
+.hide-mobile  { }
+.show-mobile  { display: none; }
+
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* ── Print ──────────────────────────────────────────────────── */
+@media print {
+  .sidebar, .navbar, .navbar-search, .no-print { display: none !important; }
+  .page-content { margin: 0 !important; padding: 0 !important; }
+  .card, .result-card, .form-section { box-shadow: none; border: 1px solid #ccc; }
+  body { background: white; color: black; }
+}

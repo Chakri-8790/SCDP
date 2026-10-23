@@ -1,0 +1,151 @@
+/* ============================================================
+   SmartConstruct AI — Charts
+   ============================================================ */
+
+.chart-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* Override recharts defaults to use our design tokens */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-color);
+}
+
+.recharts-text {
+  fill: var(--text-muted);
+  font-family: var(--font-family);
+  font-size: var(--text-xs);
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+/* Custom Tooltip */
+.chart-tooltip {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+.chart-tooltip-label {
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.chart-tooltip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 4px;
+}
+
+.chart-tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.chart-tooltip-name  { color: var(--text-secondary); }
+.chart-tooltip-value { font-weight: var(--font-semibold); color: var(--text-primary); margin-left: auto; }
+
+/* Chart Legend */
+.chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.legend-line {
+  width: 16px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Responsive chart heights */
+.chart-h-200 { height: 200px; }
+.chart-h-250 { height: 250px; }
+.chart-h-300 { height: 300px; }
+.chart-h-350 { height: 350px; }
+.chart-h-400 { height: 400px; }
+
+/* Pie / Donut legend grid */
+.pie-legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+.pie-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.pie-legend-label {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.pie-legend-value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-left: auto;
+}
+
+/* No-data placeholder */
+.chart-no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  .chart-h-300, .chart-h-350, .chart-h-400 { height: 250px; }
+}
